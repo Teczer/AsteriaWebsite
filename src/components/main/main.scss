@@ -1,0 +1,66 @@
+main {
+  padding-bottom: 40px;
+  border-bottom: 2px solid var(--space-cadet);
+  margin-bottom: 20px;
+  h1 {
+    text-align: center;
+    color: var(--lavender-blush);
+    margin-bottom: 12rem;
+
+    i {
+      cursor: pointer;
+      font-size: 25px;
+      color: var(--lavender-blush);
+    }
+
+    i:hover {
+      color: var(--carnation-pink);
+    }
+  }
+
+  .cards-container {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--lavender-blush);
+      width: 350px;
+
+      h2 {
+        text-align: center;
+        color: var(--lavender-blush);
+      }
+
+      p {
+        margin: 1rem 0;
+      }
+    }
+  }
+  #quizztoleft {
+    color: var(--lavender-blush);
+    font-size: 40px;
+    position: relative;
+    bottom: 300px;
+    left: 10px;
+    cursor: pointer;
+  }
+  #quizztoleft:hover {
+    color: var(--carnation-pink);
+  }
+  #quizztoright {
+    color: var(--lavender-blush);
+    font-size: 40px;
+    position: relative;
+    bottom: 300px;
+    left: 1700px;
+    cursor: pointer;
+  }
+  #quizztoright:hover {
+    color: var(--carnation-pink);
+  }
+}

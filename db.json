@@ -1,0 +1,84 @@
+{
+  "quizzSystemesolaire01": [
+    {
+      "questionValue": "La Lune est un satellite de la planète...",
+      "questionOptions": [
+        { "questionAnswer": "Jupiter", "isCorrect": false },
+        { "questionAnswer": "Terre", "isCorrect": true },
+        { "questionAnswer": "Mars", "isCorrect": false },
+        { "questionAnswer": "Ce n'est pas un satellite", "isCorrect": false }
+      ],
+      "photoQuestion": "lune",
+      "photoAnswer": "terre",
+      "answerName": "Terre",
+      "answerExplanation": "La **Lune**, aussi connue sous le nom de **Terre I**, est le seul satellite de la planète Terre."
+    },
+    {
+      "questionValue": "Quel est le nom du premier satellite artificiel envoyé en orbite autour de la Terre ?",
+      "questionOptions": [
+        { "questionAnswer": "Apollo", "isCorrect": false },
+        { "questionAnswer": "Ariane", "isCorrect": false },
+        { "questionAnswer": "Mir", "isCorrect": false },
+        { "questionAnswer": "Spoutnik", "isCorrect": true }
+      ],
+      "photoQuestion": "quizz-1-question-2",
+      "photoAnswer": "quizz-1-answer-2",
+      "answerName": "Spoutnik",
+      "answerExplanation": "Le premier satellite artificiel, **Spoutnik**, a été envoyé par l'URSS en 1957. **Apollo** est le nom des vols habités américains, **Ariane** est le nom d'une série de fusées européennes et **Mir** était une station spatiale russe."
+    },
+    {
+      "questionValue": "Combien y a-t-il de planètes dans le système solaire ?",
+      "questionOptions": [
+        { "questionAnswer": "5", "isCorrect": false },
+        { "questionAnswer": "15", "isCorrect": false },
+        { "questionAnswer": "17", "isCorrect": false },
+        { "questionAnswer": "8", "isCorrect": true }
+      ],
+      "photoQuestion": "quizz-1-question-3",
+      "photoAnswer": "quizz-1-answer-3",
+      "answerName": "8",
+      "answerExplanation": "Depuis Août 2006, **Pluton** n'est plus considérée comme une planète, donc notre système solaire ne compte plus que **8 planètes**."
+    }
+  ],
+  "quizzSystemesolaire02": [
+    {
+      "questionValue": "Quelles sont les deux grandes catégories de planètes ?",
+      "questionOptions": [
+        { "questionAnswer": "Solide et Liquide", "isCorrect": false },
+        { "questionAnswer": "Rocheuse et gazeuze", "isCorrect": true },
+        { "questionAnswer": "Tellurique et Rocheuse", "isCorrect": false },
+        { "questionAnswer": "Liquide et Gazeuze", "isCorrect": false }
+      ],
+      "photoQuestion": "quizz-1-question-4",
+      "photoAnswer": "quizz-1-answer-4",
+      "answerName": "Rocheuse et gazeuze",
+      "answerExplanation": "Notre système solaire contient les **deux types de planètes**. Mercure, Vénus, la Terre et Mars sont des **planètes rocheuses** aussi appelées \"planètes tellurique\" alors que Jupiter, Saturne, Uranus et Neptune sont des **planètes gazeuses**."
+    },
+    {
+      "questionValue": "Quelle est la plus grande planète du système solaire ?",
+      "questionOptions": [
+        { "questionAnswer": "Jupiter", "isCorrect": true },
+        { "questionAnswer": "Mars", "isCorrect": false },
+        { "questionAnswer": "Vénus", "isCorrect": false },
+        { "questionAnswer": "Saturne", "isCorrect": false }
+      ],
+      "photoQuestion": "quizz-1-question-5",
+      "photoAnswer": "quizz-1-answer-5",
+      "answerName": "Jupiter",
+      "answerExplanation": "Jupiter est la plus grande planète du Système solaire. Elle est plus de **onze fois plus grosse** que la Terre."
+    },
+    {
+      "questionValue": "En quelle année Pluton a-t-elle été reclassée en tant que planète naine ?",
+      "questionOptions": [
+        { "questionAnswer": "1998", "isCorrect": false },
+        { "questionAnswer": "2013", "isCorrect": false },
+        { "questionAnswer": "2006", "isCorrect": true },
+        { "questionAnswer": "2020", "isCorrect": false }
+      ],
+      "photoQuestion": "quizz-1-question-6",
+      "photoAnswer": "quizz-1-answer-6",
+      "answerName": "2006",
+      "answerExplanation": "Depuis Août 2006, **Pluton** n'est plus considérée comme une planète, elle a donc été classée comme **planète naine**"
+    }
+  ]
+}
