@@ -5,7 +5,10 @@ const Header = () => {
 	return (
 		<header>
 			<a href="/">
-				<img src="/src/assets/icons/asteriaLogo.svg" alt="Asteria" />
+				<img
+					src="https://res.cloudinary.com/dw3mwclgk/image/upload/v1670528238/asteriaLogo_af3kfh.svg"
+					alt="Asteria"
+				/>
 			</a>
 			<div className="nav-input">
 				<Link to="/">Accueil</Link>
