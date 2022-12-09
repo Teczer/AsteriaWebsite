@@ -12,10 +12,10 @@ const Header = () => {
 			</a>
 			<div className="nav-input">
 				<Link to="/">Accueil</Link>
-				<Link to="/quizz">
+				<Link to="quizz">
 					Quizz <i className="fa-solid fa-chevron-down" />
 				</Link>
-				<Link to="news">Actualités</Link>
+				<Link to="quizzcontroller">Actualités</Link>
 				{/* 				<a href="">Vidéos</a>
 				<a href="">
 					Gallerie <i className="fa-solid fa-chevron-down" />

@@ -1,6 +1,7 @@
 import Article from "../article/Article";
 import CardQuizz from "./cardsQuizz/CardQuizz";
 import "./main.scss";
+import Header from "../header/Header";
 
 function Main() {
 	const cardContent = [
@@ -22,25 +23,28 @@ function Main() {
 		},
 	];
 	return (
-		<main>
-			<h1>
-				{" "}
-				<i class="fa-solid fa-chevron-left" /> Quizz Espace{" "}
-				<i class="fa-solid fa-chevron-right" />
-			</h1>
-			<ul className="cards-container">
-				{cardContent.slice(0, 3).map((value, index) => (
-					// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-					<li className="card-container" key={index}>
-						<h2>{value.label}</h2>
-						<p>Niveau 1 / 5</p>
-						<CardQuizz src={value.src} label={value.label} />
-					</li>
-				))}
-			</ul>
-			<i id="quizztoright" class="fa-solid fa-chevron-right" />
-			<i id="quizztoleft" class="fa-solid fa-chevron-left" />
-		</main>
+		<>
+			<Header />
+			<main>
+				<h1>
+					{" "}
+					<i class="fa-solid fa-chevron-left" /> Quizz Espace{" "}
+					<i class="fa-solid fa-chevron-right" />
+				</h1>
+				<ul className="cards-container">
+					{cardContent.slice(0, 3).map((value, index) => (
+						// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+						<li className="card-container" key={index}>
+							<h2>{value.label}</h2>
+							<p>Niveau 1 / 5</p>
+							<CardQuizz src={value.src} label={value.label} />
+						</li>
+					))}
+				</ul>
+				<i id="quizztoright" class="fa-solid fa-chevron-right" />
+				<i id="quizztoleft" class="fa-solid fa-chevron-left" />
+			</main>
+		</>
 	);
 }
 

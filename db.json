@@ -8,8 +8,8 @@
         { "questionAnswer": "Mars", "isCorrect": false },
         { "questionAnswer": "Ce n'est pas un satellite", "isCorrect": false }
       ],
-      "photoQuestion": "lune",
-      "photoAnswer": "terre",
+      "photoQuestion": "https://res.cloudinary.com/dw3mwclgk/image/upload/v1670491401/img/collec2-cardFrontImage-6-voielactee_zwyzsb.jpg",
+      "photoAnswer": "https://res.cloudinary.com/dw3mwclgk/image/upload/v1670491401/img/collec2-cardFrontImage-6-voielactee_zwyzsb.jpg",
       "answerName": "Terre",
       "answerExplanation": "La **Lune**, aussi connue sous le nom de **Terre I**, est le seul satellite de la planète Terre."
     },
