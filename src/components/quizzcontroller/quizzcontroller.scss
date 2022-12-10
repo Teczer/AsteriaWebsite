@@ -6,6 +6,19 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
 
+  .fa-circle-chevron-left {
+    color: var(--lavender-blush);
+    position: relative;
+    bottom: 330px;
+    left: 800px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+
+  .fa-circle-chevron-left:hover {
+    color: var(--carnation-pink);
+  }
+
   .question-container {
     display: flex;
     flex-direction: column;

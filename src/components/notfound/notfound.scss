@@ -8,17 +8,21 @@ section {
 
   .notfound-wrapper {
     display: flex;
-    img {
-      margin-left: 10px;
+    .notfound-img {
+      margin-right: -13px;
+      width: 193px;
+      height: 150px;
+      object-fit: contain;
     }
     p {
       color: var(--lavender-blush);
-      font-weight: 500;
+      font-weight: 300;
       font-size: 170px;
     }
   }
 
   h2 {
+    margin-top: 20px;
     color: var(--lavender-blush);
     margin-bottom: 30px;
   }

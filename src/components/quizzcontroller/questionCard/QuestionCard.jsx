@@ -4,24 +4,49 @@ import "./questioncard.scss";
 function QuestionCard({
 	photoQuestion,
 	questionValue,
-	questionOption1,
-	questionOption2,
-	questionOption3,
-	questionOption4,
-	key,
+	chiffre,
+	questionOptions,
+	handleNextOption,
+	hanldleAnswrOption,
+	questionCardDisplay,
+	displayFromQuestionToAnswer,
+	goodAnswerColorEffect,
+	toChangeColorGreen,
+	changeActiveAnswer,
+	activeAnswer,
 }) {
 	return (
-		<>
-			<h3>QUESTION</h3>
+		<div
+			className="question-container"
+			style={{ display: questionCardDisplay }}
+		>
+			<h3>QUESTION {chiffre}</h3>
 			<img src={photoQuestion} alt="" />
 			<p>{questionValue}</p>
 			<div className="button-anwser-container">
-				<div className="button-quizz">{questionOption1}</div>
-				<div className="button-quizz">{questionOption2}</div>
-				<div className="button-quizz">{questionOption3}</div>
-				<div className="button-quizz">{questionOption4}</div>
+				{/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+				{questionOptions.map((question, index) => (
+					// rome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+					<div
+						className="button-quizz"
+						onClick={() => {
+							hanldleAnswrOption(question.isCorrect);
+							changeActiveAnswer(question.questionAnswer);
+							toChangeColorGreen(question);
+
+							setTimeout(() => {
+								displayFromQuestionToAnswer();
+							}, "2000");
+						}}
+						// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+						key={index}
+						style={{ backgroundColor: goodAnswerColorEffect }}
+					>
+						{question.questionAnswer}
+					</div>
+				))}
 			</div>
-		</>
+		</div>
 	);
 }
 

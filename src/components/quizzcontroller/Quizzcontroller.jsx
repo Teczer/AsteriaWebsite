@@ -3,12 +3,17 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import QuestionCard from "./questionCard/QuestionCard";
 import QuestionAnswerCard from "./questionAnswerCard/QuestionAnswerCard";
+import QuizzResult from "./quizzResult/QuizzResult";
+import { Link, useParams } from "react-router-dom";
 
 function Quizzcontroller() {
 	const [posts, setPosts] = useState([]);
+	const params = useParams();
 	useEffect(() => {
 		axios
-			.get("http://localhost:3000/quizzSystemesolaire01")
+			.get(
+				`http://localhost:3000/${params.quizzType}0${params.quizzProgression}`,
+			)
 			.then((res) => {
 				console.log(res);
 				setPosts(res.data);
@@ -16,45 +21,115 @@ function Quizzcontroller() {
 			.catch((err) => {
 				console.log(err);
 			});
-	});
+	}, []);
+	const [CorrectAns, setCorrectAns] = useState(0);
+	const [showResult, setShowResult] = useState(false);
+	const [clicked, setClicked] = useState(false);
+	const [currentQuestion, setCurrentQuestion] = useState(0);
+	const [currentQuestion1, setCurrentQuestion2] = useState(1);
+	const [questionCardDisplay, setQuestionCardDisplay] = useState("flex");
+	const [questionAnswerCardDisplay, setQuestionAnswerCardDisplay] =
+		useState("none");
+	const [goodAnswerColorEffect, setGoodAnswerColorEffect] =
+		useState("var(--oxford-blue)");
+	const [activeAnswer, setActiveAnswer] = useState();
 
-	let test = 0;
-	let test2 = 1;
+	const toChangeColorGreen = (question) => {
+		if (question.questionAnswer !== activeAnswer) return;
+		if (question.isCorrect === true) {
+			setGoodAnswerColorEffect("green");
+		} else {
+			setGoodAnswerColorEffect("red");
+		}
+	};
+
+	const hanldleAnswrOption = (isGood) => {
+		if (isGood === true) {
+			setCorrectAns(CorrectAns + 1);
+		}
+	};
+
+	const handleNextOption = () => {
+		const nextQuestion = currentQuestion + 1;
+		if (nextQuestion < posts.length) {
+			setCurrentQuestion(nextQuestion);
+		} else {
+			setShowResult(true);
+		}
+		const nextQuestion1 = currentQuestion1 + 1;
+		setCurrentQuestion2(nextQuestion1);
+		setGoodAnswerColorEffect("var(--oxford-blue)");
+	};
+
+	const displayFromQuestionToAnswer = () => {
+		setQuestionCardDisplay("none");
+		setQuestionAnswerCardDisplay("flex");
+	};
+
+	const displayFromAnswerToQuestion = () => {
+		setQuestionCardDisplay("flex");
+		setQuestionAnswerCardDisplay("none");
+	};
+
+	const backToHomeAlert = () => {
+		alert("Retourner à la page d'accueil ?");
+	};
 	return (
 		<div className="quizzcontroller">
-			<div className="question-container">
-				{/* rome-ignore lint/complexity/useOptionalChain: <explanation> */}
-				{posts &&
-					posts.slice(test, test2).map((post, index) => (
-						<>
-							<QuestionCard
+			{/* rome-ignore lint/a11y/useValidAnchor: <explanation> */}
+			<a href="/" onClick={() => this.showMessage(backToHomeAlert())}>
+				<i className="fa-solid fa-circle-chevron-left" />
+			</a>
+
+			{showResult ? (
+				<QuizzResult CorrectAns={CorrectAns} />
+			) : (
+				<>
+					{/* rome-ignore lint/complexity/useOptionalChain: <explanation> */}
+					{posts &&
+						posts
+							.slice(currentQuestion, currentQuestion1)
+							.map((post, index) => (
 								// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-								key={index}
-								photoQuestion={post.photoQuestion}
-								questionValue={post.questionValue}
-								questionOption1={post.questionOptions[0].questionAnswer}
-								questionOption2={post.questionOptions[1].questionAnswer}
-								questionOption3={post.questionOptions[2].questionAnswer}
-								questionOption4={post.questionOptions[3].questionAnswer}
-							/>
-						</>
-					))}
-			</div>
-			<div className="question-answer-container" style={{ display: "none" }}>
-				{/* rome-ignore lint/complexity/useOptionalChain: <explanation> */}
-				{posts &&
-					posts.slice(test, test2).map((post, index) => (
-						<>
-							<QuestionAnswerCard
-								// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-								key={index}
-								photoAnswer={post.photoAnswer}
-								answerName={post.answerName}
-								answerExplanation={post.answerExplanation}
-							/>
-						</>
-					))}
-			</div>
+								<div key={index}>
+									<QuestionCard
+										// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+										photoQuestion={post.photoQuestion}
+										questionValue={post.questionValue}
+										questionOptions={post.questionOptions}
+										chiffre={currentQuestion + 1}
+										handleNextOption={handleNextOption}
+										hanldleAnswrOption={hanldleAnswrOption}
+										questionCardDisplay={questionCardDisplay}
+										displayFromQuestionToAnswer={displayFromQuestionToAnswer}
+										goodAnswerColorEffect={goodAnswerColorEffect}
+										toChangeColorGreen={toChangeColorGreen}
+										activeAnswer={activeAnswer}
+										changeActiveAnswer={(questionAnswer) =>
+											setActiveAnswer(questionAnswer)
+										}
+									/>
+								</div>
+							))}
+				</>
+			)}
+
+			{/* rome-ignore lint/complexity/useOptionalChain: <explanation> */}
+			{posts &&
+				posts.slice(currentQuestion, currentQuestion1).map((post, index) => (
+					// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+					<div key={index}>
+						<QuestionAnswerCard
+							// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+							photoAnswer={post.photoAnswer}
+							answerName={post.answerName}
+							handleNextOption={handleNextOption}
+							answerExplanation={post.answerExplanation}
+							questionAnswerCardDisplay={questionAnswerCardDisplay}
+							displayFromAnswerToQuestion={displayFromAnswerToQuestion}
+						/>
+					</div>
+				))}
 		</div>
 	);
 }

@@ -5,8 +5,7 @@ function CardQuizz({ src, label }) {
 		<article>
 			<img src={src} alt="soleil" />
 			<div className="depliage">
-				<p>Détails</p>
-				<i className="fa-solid fa-chevron-down" />
+				<p>Jouer</p>
 			</div>
 		</article>
 	);

@@ -15,7 +15,7 @@ const Header = () => {
 				<Link to="quizz">
 					Quizz <i className="fa-solid fa-chevron-down" />
 				</Link>
-				<Link to="quizzcontroller">Actualités</Link>
+				<Link to="news">Actualités</Link>
 				{/* 				<a href="">Vidéos</a>
 				<a href="">
 					Gallerie <i className="fa-solid fa-chevron-down" />

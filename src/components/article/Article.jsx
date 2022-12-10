@@ -17,10 +17,9 @@ const Article = () => {
 			.catch((err) => {
 				console.log(err);
 			});
-	});
+	}, []);
 	return (
 		<>
-			<Header />
 			<section>
 				<h1>Actualités</h1>
 				<div className="articles-container">
