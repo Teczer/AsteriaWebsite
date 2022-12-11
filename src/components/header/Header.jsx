@@ -25,8 +25,9 @@ const Header = () => {
 				</a> */}
 			</div>
 			<div className="authentification-wrapper">
-				<button className="sign-up">Sign Up</button>
-				<button className="sign-in">Sign In</button>
+				<a href="/login">
+					<input type="submit" value="SE DÉCONNECTER" />
+				</a>
 			</div>
 		</header>
 	);

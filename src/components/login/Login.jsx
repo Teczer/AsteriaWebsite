@@ -8,6 +8,10 @@ function Login() {
 				src="https://res.cloudinary.com/dw3mwclgk/image/upload/v1670710895/launchlogo_3x_gw4cwy.png"
 				alt="Asterialogo"
 			/> */}
+			<h1>
+				Bienvenue sur <span className="asteria-name"> Asteria </span>,
+				veuillez-vous authenthifiez
+			</h1>
 			<section className="loginform-container">
 				<div id="login">
 					<form className="login-form" /* onSubmit={this.onSubmit} */>

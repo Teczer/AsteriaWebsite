@@ -4,6 +4,9 @@ import "./signup.scss";
 function Signup() {
 	return (
 		<main className="login-screen">
+			<h1>
+				Inscrivez-vous chez <span className="asteria-name"> Asteria </span> !
+			</h1>
 			<section className="loginform-container">
 				<div id="login">
 					<form className="login-form" /* onSubmit={this.onSubmit} */>

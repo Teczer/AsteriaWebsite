@@ -1,11 +1,18 @@
 .login-screen {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   width: 100vw;
   height: 100vh;
   margin: 0;
   padding: 0;
+
+  h1 {
+    .asteria-name {
+      color: var(--carnation-pink);
+    }
+  }
 
   .loginform-container {
     #login {
