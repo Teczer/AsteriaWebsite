@@ -35,7 +35,6 @@ function Quizzcontroller() {
 	const [activeAnswer, setActiveAnswer] = useState();
 
 	const toChangeColorGreen = (question) => {
-		if (question.questionAnswer !== activeAnswer) return;
 		if (question.isCorrect === true) {
 			setGoodAnswerColorEffect("green");
 		} else {

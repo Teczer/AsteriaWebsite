@@ -203,5 +203,46 @@
       "answerName": "4",
       "answerExplanation": "Il s'agit de **Jupiter, Saturne, Uranus, et Neptune**. Les planètes gazeuses sont principalement composées **d'hydrogène et d'hélium** et ont généralement une faible densité, une rotation rapide, des atmosphères épaisses, des anneaux et beaucoup de satellites."
     }
+  ],
+  "quizzGalaxies01": [
+    {
+      "questionValue": "La Lune est un satellite de la planète...",
+      "questionOptions": [
+        { "questionAnswer": "Jupiter", "isCorrect": false },
+        { "questionAnswer": "Terre", "isCorrect": true },
+        { "questionAnswer": "Mars", "isCorrect": false },
+        { "questionAnswer": "Ce n'est pas un satellite", "isCorrect": false }
+      ],
+      "photoQuestion": "https://res.cloudinary.com/dw3mwclgk/image/upload/v1670677935/images-quizz/SystemeSolaireQuizz/lune_ujgnpx.jpg",
+      "photoAnswer": "https://res.cloudinary.com/dw3mwclgk/image/upload/v1670677937/images-quizz/SystemeSolaireQuizz/terre_3x_s5diuz.jpg",
+      "answerName": "Terre",
+      "answerExplanation": "La **Lune**, aussi connue sous le nom de **Terre I**, est le seul satellite de la planète Terre."
+    },
+    {
+      "questionValue": "Quel est le nom du premier satellite artificiel envoyé en orbite autour de la Terre ?",
+      "questionOptions": [
+        { "questionAnswer": "Apollo", "isCorrect": false },
+        { "questionAnswer": "Ariane", "isCorrect": false },
+        { "questionAnswer": "Mir", "isCorrect": false },
+        { "questionAnswer": "Spoutnik", "isCorrect": true }
+      ],
+      "photoQuestion": "https://res.cloudinary.com/dw3mwclgk/image/upload/v1670677939/images-quizz/SystemeSolaireQuizz/quizz-1-question-2_uhrx5b.jpg",
+      "photoAnswer": "https://res.cloudinary.com/dw3mwclgk/image/upload/v1670677938/images-quizz/SystemeSolaireQuizz/quizz-1-answer-2_bfoi7z.jpg",
+      "answerName": "Spoutnik",
+      "answerExplanation": "Le premier satellite artificiel, **Spoutnik**, a été envoyé par l'URSS en 1957. **Apollo** est le nom des vols habités américains, **Ariane** est le nom d'une série de fusées européennes et **Mir** était une station spatiale russe."
+    },
+    {
+      "questionValue": "Combien y a-t-il de planètes dans le système solaire ?",
+      "questionOptions": [
+        { "questionAnswer": "5", "isCorrect": false },
+        { "questionAnswer": "15", "isCorrect": false },
+        { "questionAnswer": "17", "isCorrect": false },
+        { "questionAnswer": "8", "isCorrect": true }
+      ],
+      "photoQuestion": "https://res.cloudinary.com/dw3mwclgk/image/upload/v1670677939/images-quizz/SystemeSolaireQuizz/quizz-1-question-3_tfihlo.jpg",
+      "photoAnswer": "https://res.cloudinary.com/dw3mwclgk/image/upload/v1670677938/images-quizz/SystemeSolaireQuizz/quizz-1-answer-3_uk0i4d.jpg",
+      "answerName": "8",
+      "answerExplanation": "Depuis Août 2006, **Pluton** n'est plus considérée comme une planète, donc notre système solaire ne compte plus que **8 planètes**."
+    }
   ]
 }

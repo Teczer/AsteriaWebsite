@@ -24,7 +24,6 @@ function QuestionCard({
 			<img src={photoQuestion} alt="" />
 			<p>{questionValue}</p>
 			<div className="button-anwser-container">
-				{/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 				{questionOptions.map((question, index) => (
 					// rome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 					<div
@@ -36,7 +35,7 @@ function QuestionCard({
 
 							setTimeout(() => {
 								displayFromQuestionToAnswer();
-							}, "2000");
+							}, "1200");
 						}}
 						// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 						key={index}

@@ -70,19 +70,19 @@ function Main() {
 		{
 			src: imagess[1][Number(galaxiesProgressionValue) - 1],
 			label: "Galaxies",
-			to: "/quizzcontroller/quizzSystemesolaire02",
+			to: `/quizzcontroller/quizzGalaxies/${galaxiesProgressionValue}`,
 			niveau: niveauGalaxies,
 		},
 		{
 			src: imagess[2][Number(phenomenesObservablesProgressionValue) - 1],
 			label: "Phénomènes Observable",
-			to: "/quizzcontroller/systemesolaire",
+			to: `/quizzcontroller/quizzPhenomenesObservables/${phenomenesObservablesProgressionValue}`,
 			niveau: niveauPhenomenesObservables,
 		},
 		{
 			src: imagess[3][Number(astronautesProgressionValue) - 1],
 			label: "Astronautes",
-			to: "/quizzcontroller/systemesolaire",
+			to: `/quizzcontroller/quizzAstronautes/${astronautesProgressionValue}`,
 			niveau: niveauAstronautes,
 		},
 	];

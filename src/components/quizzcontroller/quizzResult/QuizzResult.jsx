@@ -17,17 +17,19 @@ function QuizzResult({ CorrectAns }) {
 				<h1>{CorrectAns} / 3</h1>
 				<h2>bonnes réponses</h2>
 			</div>
-			<div className="button-to-home">
-				<Link to="/">Retourner à l'accueil</Link>
-			</div>
-			<div className="button-to-home">
-				<a
-					href={`/quizzcontroller/${params.quizzType}/${
-						Number(params.quizzProgression) + 1
-					}`}
-				>
-					Niveau suivant
-				</a>
+			<div className="btn-containerr">
+				<div className="button-to-home">
+					<Link to="/">Retourner à l'accueil</Link>
+				</div>
+				<div className="button-to-home">
+					<a
+						href={`/quizzcontroller/${params.quizzType}/${
+							Number(params.quizzProgression) + 1
+						}`}
+					>
+						Niveau suivant
+					</a>
+				</div>
 			</div>
 		</div>
 	);
