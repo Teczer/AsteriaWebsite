@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./login.scss";
 
 function Login() {
@@ -10,7 +11,14 @@ function Login() {
 			/> */}
 			<h1>
 				Bienvenue sur <span className="asteria-name"> Asteria </span>,
-				veuillez-vous authenthifiez
+				veuillez-vous{" "}
+				<span>
+					{" "}
+					<Link to="/" style={{ color: "var(--lavender-blush)" }}>
+						{" "}
+						authenthifiez{" "}
+					</Link>{" "}
+				</span>
 			</h1>
 			<section className="loginform-container">
 				<div id="login">

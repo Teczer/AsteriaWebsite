@@ -5,7 +5,6 @@ import "./notfound.scss";
 function Notfound() {
 	return (
 		<>
-			<Header />
 			<section>
 				<div className="notfound-wrapper">
 					<p>4</p>

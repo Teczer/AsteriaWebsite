@@ -35,7 +35,7 @@ function QuestionCard({
 
 							setTimeout(() => {
 								displayFromQuestionToAnswer();
-							}, "1200");
+							}, "1800");
 						}}
 						// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 						key={index}
