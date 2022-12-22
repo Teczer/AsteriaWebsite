@@ -28,6 +28,7 @@ function QuestionCard({
 					// rome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 					<div
 						className="button-quizz"
+						tabIndex={(1, 2, 3, 4)}
 						onClick={() => {
 							hanldleAnswrOption(question.isCorrect);
 							changeActiveAnswer(question.questionAnswer);
@@ -36,6 +37,17 @@ function QuestionCard({
 							setTimeout(() => {
 								displayFromQuestionToAnswer();
 							}, "1800");
+						}}
+						onKeyDownCapture={() => {
+							if (event.key === "Enter") {
+								hanldleAnswrOption(question.isCorrect);
+								changeActiveAnswer(question.questionAnswer);
+								toChangeColorGreen(question);
+
+								setTimeout(() => {
+									displayFromQuestionToAnswer();
+								}, "1800");
+							}
 						}}
 						// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 						key={index}

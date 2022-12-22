@@ -73,12 +73,42 @@ function Quizzcontroller() {
 	const backToHomeAlert = () => {
 		alert("Retourner à la page d'accueil ?");
 	};
+
+	const [displayModalQuit, setDisplayModalQuit] = useState("none");
+	const displayModalQuitQuizz = () => {
+		setDisplayModalQuit("flex");
+	};
+	const hideModalQuitQuizz = () => {
+		setDisplayModalQuit("none");
+	};
 	return (
 		<div className="quizzcontroller">
 			{/* rome-ignore lint/a11y/useValidAnchor: <explanation> */}
-			<a href="/" onClick={() => this.showMessage(backToHomeAlert())}>
+			{/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+			<div
+				className="backToHomeContainer"
+				onClick={() => {
+					displayModalQuitQuizz();
+				}}
+			>
 				<i className="fa-solid fa-circle-chevron-left" />
-			</a>
+			</div>
+
+			<div className="backToHomeModal" style={{ display: displayModalQuit }}>
+				<h3>Êtes vous sûr de vouloir retourner à l'accueil ?</h3>
+				<a href="/">
+					<input type="submit" value="QUITTER" />
+				</a>
+				{/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+				<div
+					className="cancelBackToHome"
+					onClick={() => {
+						hideModalQuitQuizz();
+					}}
+				>
+					<input type="submit" value="ANNULER" />
+				</div>
+			</div>
 
 			{showResult ? (
 				<QuizzResult CorrectAns={CorrectAns} />

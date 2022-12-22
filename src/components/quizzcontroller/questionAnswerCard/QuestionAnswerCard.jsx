@@ -21,9 +21,17 @@ function QuestionAnswerCard({
 			{/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 			<div
 				className="button-next-question"
+				// rome-ignore lint/a11y/noPositiveTabindex: <explanation>
+				tabIndex={1}
 				onClick={() => {
 					handleNextOption();
 					displayFromAnswerToQuestion();
+				}}
+				onKeyDownCapture={() => {
+					if (event.key === "Enter") {
+						handleNextOption();
+						displayFromAnswerToQuestion();
+					}
 				}}
 			>
 				Continuer
