@@ -1,13 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 import "./quizzresult.scss";
+import { useAuthContext } from "../../../../hooks/useAuthContext";
 
 function QuizzResult({ CorrectAns }) {
 	const params = useParams();
-	function saveProgression() {
+	const { user } = useAuthContext();
+	async function saveProgression() {
+		console.log("wsh");
 		const currentProgression = localStorage.getItem(params.quizzType);
 		localStorage.setItem(params.quizzType, Number(params.quizzProgression) + 1);
+		const quiZz = params.quizzType;
+		const response = await axios.patch(
+			"http://localhost:5001/workouts/63bbd758b9ea583d921f2721",
+			{ [params.quizzType]: Number(params.quizzProgression) + 1 },
+			{
+				headers: {
+					Authorization: `Bearer ${user.token}`,
+				},
+			},
+		);
+		console.log(response.data);
+		console.log(params.quizzProgression);
 	}
+
 	useEffect(() => {
 		saveProgression();
 	}, []);

@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./login.scss";
+import { useLogin } from "../../../hooks/useLogin";
+import Header from "../header/Header";
 
 function Login() {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const { login, error, isLoading } = useLogin();
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		await login(email, password);
+	};
 	return (
 		<main className="login-screen">
 			{/* 	<img
@@ -22,7 +33,10 @@ function Login() {
 			</h1>
 			<section className="loginform-container">
 				<div id="login">
-					<form className="login-form" /* onSubmit={this.onSubmit} */>
+					<form
+						className="login-form" /* onSubmit={this.onSubmit} */
+						onSubmit={handleSubmit}
+					>
 						<span className="fa fa-user" />
 						<input
 							// rome-ignore lint/a11y/noAutofocus: <explanation>
@@ -31,20 +45,29 @@ function Login() {
 							/* onChange={this.handleChange.bind(this, "email")} */
 							placeholder="Email"
 							type="email"
+							onChange={(e) => setEmail(e.target.value)}
+							value={email}
 							/* value={this.state.user.email} */
 							required
 						/>
 						<span className="fa fa-lock" />
 						<input
 							autoComplete="off"
-							maxLength="8"
+							maxLength="12"
 							/* onChange={this.handleChange.bind(this, "password")} */
 							placeholder="Mot de passe"
 							type="password"
+							onChange={(e) => setPassword(e.target.value)}
+							value={password}
 							/* value={this.state.user.password} */
 							required
 						/>
-						<input type="submit" value="Se connecter" />
+						<input type="submit" value="Se connecter" disabled={isLoading} />
+						{error && (
+							<div className="error" style={{ color: "red" }}>
+								{error}
+							</div>
+						)}
 					</form>
 				</div>
 				<div className="notmember-container">

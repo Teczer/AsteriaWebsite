@@ -1,5 +1,5 @@
 {
-  "quizzSystemesolaire01": [
+  "quizzSystemeSolaire01": [
     {
       "questionValue": "La Lune est un satellite de la planète...",
       "questionOptions": [
@@ -40,7 +40,7 @@
       "answerExplanation": "Depuis Août 2006, **Pluton** n'est plus considérée comme une planète, donc notre système solaire ne compte plus que **8 planètes**."
     }
   ],
-  "quizzSystemesolaire02": [
+  "quizzSystemeSolaire02": [
     {
       "questionValue": "Quelles sont les deux grandes catégories de planètes ?",
       "questionOptions": [
@@ -81,7 +81,7 @@
       "answerExplanation": "Depuis Août 2006, **Pluton** n'est plus considérée comme une planète, elle a donc été classée comme **planète naine**"
     }
   ],
-  "quizzSystemesolaire03": [
+  "quizzSystemeSolaire03": [
     {
       "questionValue": "Combien de satellites naturels Jupiter possède-t-elle ?",
       "questionOptions": [
@@ -122,7 +122,7 @@
       "answerExplanation": "Le 16 juillet 1969, les trois astronautes américains de la mission Apollo 11, Neil Armstrong, Buzz Aldrin et Michael Collins, décollaient pour la Lune depuis la Floride, **Neil Armstrong est le premier homme a avoir posé son pied sur la lune**."
     }
   ],
-  "quizzSystemesolaire04": [
+  "quizzSystemeSolaire04": [
     {
       "questionValue": "Quel est l'âge du système solaire ?",
       "questionOptions": [
@@ -163,7 +163,7 @@
       "answerExplanation": "Le premier système planétaire découvert autour d'une étoile de type solaire en dehors du Système solaire est celui de **l'étoile 51 Pegasi** en 1995. Depuis ce temps, des **centaines** de planètes extra-solaires ont été découvertes."
     }
   ],
-  "quizzSystemesolaire05": [
+  "quizzSystemeSolaire05": [
     {
       "questionValue": "Quelle est la distance Terre-Soleil ?",
       "questionOptions": [

@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import "./header.scss";
+import { useLogout } from "../../../hooks/useLogout";
+import { useAuthContext } from "../../../hooks/useAuthContext";
 
 const Header = () => {
+	const { logout } = useLogout();
+	const { user } = useAuthContext();
+
+	const handleClick = () => {
+		logout();
+	};
+
 	return (
 		<header>
 			<a href="/">
@@ -24,11 +33,23 @@ const Header = () => {
 					Magasin <i className="fa-solid fa-chevron-down" />
 				</a> */}
 			</div>
-			<div className="authentification-wrapper">
-				<a href="/login">
-					<input type="submit" value="SE DÉCONNECTER" />
-				</a>
-			</div>
+			{user && (
+				<div className="logout-wrapper">
+					<span style={{ color: "var(--lavender-blush)" }}>{user.email}</span>
+					<input type="submit" value="SE DÉCONNECTER" onClick={handleClick} />
+				</div>
+			)}
+
+			{!user && (
+				<div className="authentification-wrapper">
+					<Link className="signup" to="login">
+						Connexion
+					</Link>
+					<Link className="login" to="signup">
+						Inscription
+					</Link>
+				</div>
+			)}
 		</header>
 	);
 };

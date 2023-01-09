@@ -1,7 +1,41 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useSignup } from "../../../hooks/useSignup";
+import { useAuthContext } from "../../../hooks/useAuthContext";
 import "./signup.scss";
 
 function Signup() {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const { signup, error, isLoading } = useSignup();
+	const { user } = useAuthContext();
+
+	async function toSetDb() {
+		const response = await axios.post(
+			"http://localhost:5001/workouts",
+			{
+				quizzSystemeSolaire: 1,
+				quizzGalaxies: 1,
+				quizzPhenomenesObservables: 1,
+				quizzAstronautes: 1,
+			},
+			{
+				headers: {
+					Authorization: `Bearer ${user.token}`,
+				},
+			},
+		);
+		console.log(response.data);
+	}
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		await signup(email, password);
+		console.log(email, password);
+		await console.log("joriszs", user);
+		toSetDb();
+	};
 	return (
 		<main className="login-screen">
 			<h1>
@@ -9,7 +43,10 @@ function Signup() {
 			</h1>
 			<section className="loginform-container">
 				<div id="login">
-					<form className="login-form" /* onSubmit={this.onSubmit} */>
+					<form
+						className="login-form" /* onSubmit={this.onSubmit} */
+						onSubmit={handleSubmit}
+					>
 						<span className="fa fa-user" />
 						<input
 							// rome-ignore lint/a11y/noAutofocus: <explanation>
@@ -18,30 +55,29 @@ function Signup() {
 							/* onChange={this.handleChange.bind(this, "email")} */
 							placeholder="Email"
 							type="email"
+							onChange={(e) => setEmail(e.target.value)}
+							value={email}
 							/* value={this.state.user.email} */
 							required
 						/>
 						<span className="fa fa-lock" />
 						<input
 							autoComplete="off"
-							maxLength="8"
+							maxLength="12"
 							/* onChange={this.handleChange.bind(this, "password")} */
 							placeholder="Mot de passe"
 							type="password"
+							onChange={(e) => setPassword(e.target.value)}
+							value={password}
 							/* value={this.state.user.password} */
 							required
 						/>
-						<span className="fa fa-lock" />
-						<input
-							autoComplete="off"
-							maxLength="8"
-							/* onChange={this.handleChange.bind(this, "password")} */
-							placeholder="Confirmer le mot de passe"
-							type="password"
-							/* value={this.state.user.password} */
-							required
-						/>
-						<input type="submit" value="S'inscrire" />
+						<input type="submit" value="S'inscrire" disabled={isLoading} />
+						{error && (
+							<div className="error" style={{ color: "red" }}>
+								{error}
+							</div>
+						)}
 					</form>
 				</div>
 				<div className="notmember-container">

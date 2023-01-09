@@ -122,7 +122,6 @@ function Quizzcontroller() {
 								// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 								<div key={index}>
 									<QuestionCard
-										// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 										photoQuestion={post.photoQuestion}
 										questionValue={post.questionValue}
 										questionOptions={post.questionOptions}
@@ -149,7 +148,6 @@ function Quizzcontroller() {
 					// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 					<div key={index}>
 						<QuestionAnswerCard
-							// rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 							photoAnswer={post.photoAnswer}
 							answerName={post.answerName}
 							handleNextOption={handleNextOption}
